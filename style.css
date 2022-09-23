@@ -3,10 +3,6 @@ font-weight: 400 e 700 */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
 
-:root {
-    font-size: 62.5%;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +10,7 @@ font-weight: 400 e 700 */
 }
 
 :root {
+    font-size: 62.5%;
     --background: #000;
     --text-color: #FFF;
     --button: #8257E5;
@@ -26,6 +23,7 @@ body {
     background-color: var(--background);
     font-family: 'Manrope', sans-serif;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
 
@@ -36,21 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 5rem;
-}
-
-.header-mobile {
-    position: absolute;
-    width: 100vw;
-    padding: 3rem 0;
-    align-items: center;
-    display: none;
-    border-bottom: solid .1rem var(--border);
-    justify-content: space-around;
-}
-
-.header-mobile>img{
-    cursor: pointer;
+    margin: 5vh;
 }
 
 nav>a {
@@ -66,7 +50,7 @@ nav>a:hover {
     border-bottom: solid .2rem var(--text-color);
 }
 
-.button-desktop, .button-mobile {
+.button-desktop {
     font-weight: 700;
     font-size: 1.1rem;
     height: 3.7rem;
@@ -80,9 +64,10 @@ nav>a:hover {
     cursor: pointer;
 }
 
-.button-desktop:hover, .button-mobile:hover {
+.button-desktop:hover {
     background-color: var(--button);
 }
+
 
 .background-desktop {
     height: 100vh;
@@ -90,18 +75,12 @@ nav>a:hover {
     background: url(/RocketCoffee-Rocketseat/assets/rocket-coffee.png) no-repeat bottom center, url(/RocketCoffee-Rocketseat/assets/blur-1.png) no-repeat bottom left, url(/RocketCoffee-Rocketseat/assets/blur-2.png) no-repeat top right;
 }
 
-.background-mobile {
-    display: none;
-    height: 100vh;
-    width: 100vw;
-    background: url(/RocketCoffee-Rocketseat/assets/rocket-coffee.png) no-repeat bottom, url(/RocketCoffee-Rocketseat/assets/blur-mobile.png) no-repeat bottom;
-    background-size: contain, contain;
-}
 
-.title {
+.title-desktop {
+    display: block;
     position: absolute;
     font-weight: 700;
-    font-size: 8rem;
+    font-size: 10vh;
     color: var(--text-color);
     top: 15%;
     left: 50%;
@@ -110,26 +89,6 @@ nav>a:hover {
     text-align: center;
 }
 
-.header-title{
-    position: absolute;
-    top: 20%;
-    width: 80%;
-    display: none;
-    align-items: center;
-    flex-direction: column;
-}
-
-.button-mobile{
-    margin-top: 5rem;
-    background: url(/RocketCoffee-Rocketseat/assets/arrow.svg) no-repeat 90%;
-}
-
-#header-title{
-    color: var(--text-color);
-    font-size: 3rem;
-    font-weight: 400;
-    text-align: center;
-}
 
 #stroke {
     top: 30%;
@@ -137,22 +96,137 @@ nav>a:hover {
     text-shadow: -.1rem -.1rem 0 var(--button), .1rem -.1rem 0 var(--button), -.1rem .1rem 0 var(--button), .1rem .1rem 0 var(--button);
 }
 
-@media screen and (max-width: 42.8rem) {
-    .background-desktop, .header-desktop {
-        display: none;
-    }
+.nav-menu-desktop {
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    border-bottom: solid .1rem var(--border);
+}
 
-    .background-mobile {
+.nav-menu-desktop>a {
+    height: 3em;
+    margin: 0;
+    padding-left: 2em;
+    font-size: 1.8em;
+    font-weight: 700;
+    border-top: solid .1rem var(--border);
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu-desktop>a:focus {
+    border-left: solid .5rem var(--button);
+    border-bottom: none;
+}
+
+.background-mobile {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url(/RocketCoffee-Rocketseat/assets/rocket-coffee.png) no-repeat bottom, url(/RocketCoffee-Rocketseat/assets/blur-mobile.png) bottom no-repeat;
+    background-size: contain;
+}
+
+.header-mobile{
+    position: relative;
+    width: 100vw;
+    padding: 2em;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid .1rem var(--border);
+}
+
+#menu-button{
+    border: none;
+    background-color: transparent;
+    height: 4.8rem;
+    width: 4.8rem;
+    background: url(/RocketCoffee-Rocketseat/assets/menu-buguer-open.svg) no-repeat center;
+}
+
+.main{
+    margin-top: 7vh;
+    position: relative;
+    display: none;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.slogan{
+    padding: 5rem 4rem;
+    font-weight: 400;
+    font-size: 8vw;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.mobile-button {
+    font-weight: 700;
+    font-size: 1.1rem;
+    height: 3.7rem;
+    width: 17.2rem;
+    color: var(--text-color);
+    background-color: transparent;
+    border: solid .1rem var(--button);
+    border-radius: .5rem;
+    text-transform: uppercase;
+    transition: .5s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+}
+
+.title-mobile {
+    margin-top: 5rem;
+    display: none;
+    position: absolute;
+    bottom: 25%;
+    font-weight: 700;
+    font-size: 10vw;
+    color: var(--text-color);
+    width: 100vw;
+    text-align: center;
+}
+
+.nav-menu-mobile{
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    border-bottom: solid .1rem var(--border-menu-mobile);
+}
+
+.nav-menu-mobile>a{
+    width: inherit;
+    height: 6vh;
+    padding-left: 1rem;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    border-top: solid .1rem var(--border-menu-mobile);
+}
+
+.nav-menu-mobile>a:focus{
+    border-left: solid .5rem var(--button);
+}
+
+@media screen and (max-width: 900px) {
+    .background-mobile, .title-mobile{
         display: block;
     }
 
-    .title {
-        font-size: 5rem;
-        bottom: 30%;
-        top: auto;
+    .header-mobile, .main{
+        display: flex;
     }
 
-    .header-mobile, .header-title {
-        display: flex;
+    .nav-menu-desktop, .header-desktop, .background-desktop, .title-desktop{
+        display: none;
     }
 }
