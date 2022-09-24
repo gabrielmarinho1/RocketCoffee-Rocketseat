@@ -27,7 +27,7 @@ function vp() {
     var main = document.querySelector(".main")
     var titleMobile = document.querySelector(".title-mobile")
     var navMenuMobile = document.getElementById("nav-menu-mobile")
-    if (window.matchMedia("(max-width: 900px)").matches == false) {
+    if (window.matchMedia("(max-width: 555px)").matches == false) {
         backgroundMobile.style.display = 'none';
         main.style.display = 'none';
         titleMobile.style.display = 'none';
